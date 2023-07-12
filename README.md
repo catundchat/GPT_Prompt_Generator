@@ -10,6 +10,7 @@ To generate gpt prompt automatically and a ranking is given based on the scores.
 - [配置](#配置)
   - [参数表](#参数表)
   - [Elo评分系统](#Elo评分系统)
+  - [wandb](#wandb)
 - [使用过程](#使用过程)
 - [预期结果](#预期结果)
 - [参考文献](#参考文献)
@@ -49,13 +50,25 @@ config={
 
 - expected_score(r1, r2)：这个函数用于计算预期得分。参数 r1 和 r2 分别代表两个提示的当前评分。函数返回的是提示1在与提示2对决时的预期得分。这个预期得分是根据 Elo 系统的公式计算的，公式是：<img src="img/QianJianTec.jpg" width="200"/>
 
-- update_Elo(r1, r2, score1)：这个函数用于更新 Elo 评分。参数 r1 和 r2 分别代表两个提示的当前评分，score1 是提示1的实际得分。函数返回的是两个提示的更新后的评分。更新的方式是根据 Elo 系统的公式，公式是：<img src="img/QianJianTec1689151203190.jpt" width="200"/>
+- update_Elo(r1, r2, score1)：这个函数用于更新 Elo 评分。参数 r1 和 r2 分别代表两个提示的当前评分，score1 是提示1的实际得分。函数返回的是两个提示的更新后的评分。更新的方式是根据 Elo 系统的公式，公式是：<img src="img/QianJianTec1689151203190.jpg" width="200"/>
 
 其中，r' 是更新后的评分，score 是实际得分，E 是预期得分，K 是一个常数，表示评分的最大变动。
 
 - get_score(description, test_case, pos1, pos2, ranking_model_name, ranking_model_temperature)：这个函数用于获取两个提示生成的输出的评分。它使用另一个 GPT 模型，根据提供的任务描述、测试提示和两个生成的输出，返回一个评分。这个评分是 'A' 或 'B' 或者两者都不是。如果评分是 'A'，那么说明生成输出1的质量更好，实际得分为1；如果评分是 'B'，那么说明生成输出2的质量更好，实际得分为0；如果两者都不是，那么说明两个生成输出的质量差不多，实际得分为0.5。
 
 在 test_candidate_prompts(test_cases, description, prompts) 函数中，上述三个函数被应用于每一对提示和每个测试用例，从而对所有的提示进行评分。具体的流程是：首先，初始化每个提示的 Elo 评分为1200。然后，对每一对提示和每个测试用例，生成两个输出，获取两个输出的评分，计算实际得分，然后根据实际得分和预期得分更新 Elo 评分。
+
+### wandb
+
+Weights & Biases（简称wandb）是一个用于机器学习的实验跟踪、数据集版本控制和模型管理的工具。它可以帮助我们呢记录和比较不同实验的结果，从而更好地理解模型的表现。
+
+<details>
+  <summary>示例：</summary>
+  在wandb后台可以看到系统占用内存详情，产生的prompt及其对应Elo评分：
+  ![wandb1](img/wandb_summary.JPG)
+
+  ![wandb2](img/wandb_system.JPG)
+</details>
 
 ## 使用过程
 
