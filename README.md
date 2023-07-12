@@ -2,11 +2,11 @@
 
 To generate gpt prompt automatically and a ranking is given based on the scores.
 
-微信小程序：AI爱家 | ELO评分 | Prompt自动化生成
+微信小程序：AI爱家 | Elo评分 | Prompt自动化生成
 
 ## 概述
 
-Prompt的本质是调整任务格式去迎合我们的LLM(Large Language Model), Prompt 采取类似完形填空的策略，这要求模型具备一些序列语义信息。而对于Prompt Tuning往往需要人工撰写大量prompt，测试过程耗时费力且不好评估。这里提出了一种基于ELO评分的prompt自动化生成方法，本质上是使用`gpt-4`或`gpt-3.5-turbo`模型能力，我们只需输入任务描述(description)和一些测试用例(test_case)，系统就会生成、测试和排序大量提示，以找到表现最好的prompt。
+Prompt的本质是调整任务格式去迎合我们的LLM(Large Language Model), Prompt 采取类似完形填空的策略，这要求模型具备一些序列语义信息。而对于Prompt Tuning往往需要人工撰写大量prompt，测试过程耗时费力且不好评估。这里提出了一种基于Elo评分的prompt自动化生成方法，本质上是使用`gpt-4`或`gpt-3.5-turbo`模型能力，我们只需输入任务描述(description)和一些测试用例(test_case)，系统就会生成、测试和排序大量提示，以找到表现最好的prompt。
 
 ## 配置
 
@@ -31,13 +31,13 @@ config={
 ```
 文件地址：`code/gpt_prompt_generator_wandb.ipynb` 和 `code/gpt_prompt_generator.py`
 
-### ELO评分系统
+### Elo评分系统
 
-每个提示初始赋予1200的ELO评分。在生成测试用例响应的过程中，这些提示会进行相互竞争，其ELO评分会根据其表现进行调整。通过这种方式，最后返回一个rating排序，我们可以直观地看到不同prompt对应的评分。Elo评分系统主要通过以下几个函数来实现：
+每个提示初始赋予1200的Elo评分。在生成测试用例响应的过程中，这些提示会进行相互竞争，其Elo评分会根据其表现进行调整。通过这种方式，最后返回一个rating排序，我们可以直观地看到不同prompt对应的评分。Elo评分系统主要通过以下几个函数来实现：
 
 - expected_score(r1, r2)：这个函数用于计算预期得分。参数 r1 和 r2 分别代表两个提示的当前评分。函数返回的是提示1在与提示2对决时的预期得分。这个预期得分是根据 Elo 系统的公式计算的，公式是：\[E = \frac{1}{1 + 10^{(r2 - r1) / 400}}\]
 
-- update_elo(r1, r2, score1)：这个函数用于更新 Elo 评分。参数 r1 和 r2 分别代表两个提示的当前评分，score1 是提示1的实际得分。函数返回的是两个提示的更新后的评分。更新的方式是根据 Elo 系统的公式，公式是：
+- update_Elo(r1, r2, score1)：这个函数用于更新 Elo 评分。参数 r1 和 r2 分别代表两个提示的当前评分，score1 是提示1的实际得分。函数返回的是两个提示的更新后的评分。更新的方式是根据 Elo 系统的公式，公式是：
 \[
 r' = r + K * (score - E)
 \]
