@@ -1,7 +1,7 @@
 # GPT_Prompt_Generator
 To generate gpt prompt automatically and a ranking is given based on the scores.
 
-微信小程序：AI爱家 | ELO score | Prompt 自动化生成
+微信小程序：AI爱家 | ELO评分 | Prompt自动化生成
 
 ## 概述
 
