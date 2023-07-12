@@ -65,6 +65,7 @@ Weights & Biases（简称wandb）是一个用于机器学习的实验跟踪、�
 <details>
   <summary>示例：</summary>
   在wandb后台可以看到系统占用内存详情，产生的prompt及其对应Elo评分：
+  
   ![wandb1](img/wandb_summary.JPG)
 
   ![wandb2](img/wandb_system.JPG)
