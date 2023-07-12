@@ -60,10 +60,11 @@ config={
 
 ### wandb
 
-Weights & Biases（简称wandb）是一个用于机器学习的实验跟踪、数据集版本控制和模型管理的工具。它可以帮助我们呢记录和比较不同实验的结果，从而更好地理解模型的表现。
+Weights & Biases（简称wandb）是一个用于机器学习的实验跟踪、数据集版本控制和模型管理的工具。它可以帮助我们呢记录和比较不同实验的结果，从而更好地理解模型的表现。若要使用，设置 `wandb=True`
 
 <details>
   <summary>示例：</summary>
+  
   在wandb后台可以看到系统占用内存详情，产生的prompt及其对应Elo评分：
   
   ![wandb1](img/wandb_summary.JPG)
