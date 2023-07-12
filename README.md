@@ -10,6 +10,7 @@ Prompt的本质是调整任务格式去迎合我们的LLM(Large Language Model),
 
 ## 配置
 
+### Colab demo
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/catundchat/gpt_prompt_generator/blob/main/gpt_prompt_generator.ipynb)
 
 ### 参数表
@@ -53,5 +54,15 @@ r' = r + K * (score - E)
 - 添加OpenAI API KEY
 - 若有`gpt-4`API，则不用修改code；若无`gpt-4`API，则将`gpt-4`修改为`gpt-3.5-turbo`
 - 修改参数表：包括但不限于`temperature`, `max_tokens`, `number_of_prompts`等
-- 依据具体项目要求修改: `description`，`test_case`
+- 依据具体项目要求修改: `description`，`test_case`，比如：
+```
+description = "Given a prompt, generate a prompt to help large language model understand what user says and have better empathy and generate better responses"
+
+test_cases = [
+    {
+        'prompt': 'You are a very skilled psychology assistant with extensive knowledge of psychology and intimate relationship problem solving skills, and now you need to talk to users. Please empathise with your users and solve their problems as best as you can.'
+    }
+]
+```
+
 
