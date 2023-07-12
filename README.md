@@ -65,4 +65,14 @@ test_cases = [
 ]
 ```
 
+## 预期结果
+
+依据config中所填的各项参数，产生`number_of_prompts`，并能实时看到生成及比较Elo评分流程
+
+![img1](img/gpt_prompt_generator_2.PNG)
+
+最终的Elo评级将打印在表格中，并按降序排列。分数越高，prompt质量越佳。
+
+![img2](img/gpt_prompt_generator_3.PNG)
+
 
