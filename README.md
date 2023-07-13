@@ -23,7 +23,7 @@ Prompt的本质是调整任务格式去迎合我们的LLM(Large Language Model),
 ## 配置
 
 ### Colab demo
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/catundchat/gpt_prompt_generator/blob/main/gpt_prompt_generator.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/catundchat/gpt_prompt_generator/blob/main/gpt_prompt_generator.ipynb) 点这！代码在这！
 
 ### 参数表
 ```
