@@ -2,7 +2,7 @@
 
 To generate gpt prompt automatically and a ranking is given based on the scores.
 
-微信小程序：AI爱家 | Elo评分 | Prompt自动化生成
+GPT | Elo评分 | Prompt自动化生成
 
 ## 目录
 
