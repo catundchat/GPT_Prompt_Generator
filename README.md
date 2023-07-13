@@ -2,7 +2,7 @@
 
 To generate gpt prompt automatically and a ranking is given based on the scores.
 
-GPT | Elo评分 | Prompt自动化生成
+Chatbot | Elo评分 | Prompt自动化生成
 
 ## 目录
 
