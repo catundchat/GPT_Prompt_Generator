@@ -13,7 +13,7 @@ Chatbot | Elo评分 | Prompt自动化生成
   - [wandb](#wandb)
 - [使用过程](#使用过程)
 - [预期结果](#预期结果)
-- [Prompt Elo 评分](#Prompt-Elo-评分)
+- [Prompt Elo 评分](#prompt-elo-评分)
 - [参考文献](#参考文献)
 
 
@@ -102,11 +102,11 @@ test_cases = [
 
 ## Prompt Elo 评分
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/catundchat/gpt_prompt_generator/blob/main/Elo_ratings) 点这！代码在这！
-对输入的 prompt 评分，基准值为1200分，返回 Elo 评分列表。
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/catundchat/gpt_prompt_generator/blob/main/Elo_ratings.ipynb) 点这！代码在这！
 
-<details>
-<summary>对已有的prompt评分示例</summary>
+实现功能：对输入的 prompt 评分，基准值为1200分，返回 Elo 评分列表。
+
+对已有的prompt评分示例
 
 主题：育儿
 
@@ -163,7 +163,6 @@ Before providing assistance, please first ask at least three open-ended question
     '''
     ]
 ```
-</details>
 
 ## 参考文献
 
