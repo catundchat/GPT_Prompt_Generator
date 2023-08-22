@@ -169,6 +169,6 @@ Before providing assistance, please first ask at least three open-ended question
 
 1. [chatgpt如何自动生成角色prompt模板](https://blog.csdn.net/biggbang/article/details/130872149)
 2. [自动生成数据 - ChatGPT-IT-Prompts](https://www.youtube.com/watch?v=Hc-_yYKlI5Q)
-3. [auto-gpt-prompt-enginerring](https://github.com/FintanK/auto-gpt-prompt-enginerring)
+3. [auto-gpt-prompt-engineering](https://github.com/FintanK/auto-gpt-prompt-enginerring)
 4. [gpt-prompt-engineer](https://github.com/mshumer/gpt-prompt-engineer)
 5. [GPT-Overview:GPT models](https://platform.openai.com/docs/guides/gpt/chat-completions-vs-completions)
